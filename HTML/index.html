@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC</title>
+
+    <!-- Estilo -->
+    <style>
+
+        .encabezados {
+            font-weight: bold;
+            color: blueviolet;
+        }
+
+        header {
+
+            background-color: azure;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px dotted black;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: beige;
+        }
+
+        #Nombre, #Mensaje, #Email {
+            padding: 10px;
+        }
+
+        /* Estilos para los campos de entrada y el botón */
+        input, textarea, button {
+            border-radius: 20px; /* Hace los bordes redondeados */
+            padding: 0.5rem; /* Espacio interior */
+            border: 1px solid #ccc; /* Bordes de los inputs */
+            font-size: 1rem; /* Tamaño de la fuente */
+        }
+
+        /* Estilos específicos para el textarea */
+        textarea {
+            resize: vertical; /* Permite el cambio de tamaño solo vertical */
+            height: 100px; /* Altura fija para el textarea */
+        }
+
+        /* Estilo para los botones */
+        button {
+            background-color: #007BFF; /* Color de fondo del botón */
+            color: white; /* Color del texto del botón */
+            border: none; /* Quita el borde del botón */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+            font-size: 1rem; /* Tamaño de la fuente */
+        }
+
+        /* Alinea las etiquetas con los campos de entrada */
+        label {
+            margin-bottom: 0.5rem; /* Espacio debajo de la etiqueta */
+            display: block; /* Asegura que la etiqueta esté en su propia línea */
+        }
+
+        footer {
+            text-align: right;
+            color: gray;
+
+        }
+    </style>
+    <!-- Estilo -->
+    
+</head>
+
+<body>
+    <header>
+        <h1>Bases de HTML</h1>
+    </header>
+
+    <main>
+        <ol id="listaGrande"> <!-- Realice una lista ordenada para que cada sección tuviera un número -->
+            
+            <!-- Estructura básica -->
+            <section id="EstructuraBasica">
+                <li>
+                    <div class="encabezados">
+                        <h1>Estructura básica del Documento HTML</h1>
+                    </div>
+                        <h4>Este documento HTML tiene la estructura básica que incluye la declaración de DOCTYPE, etiquetas de metadatos y un título</h4>
+                </li>
+                
+            </section>
+            <!-- Estructura básica -->
+            
+            <!-- Encabezados y Propiedades del texto -->
+            <section id="EncabezadosPropiedades">
+                <li>
+                    <div class="encabezados">
+                        <h1>Encabezados y Propiedades del texto</h1>
+                    </div>
+
+                    <div>
+                        <h2 id="TextoNegrita"><b>Este es un texto en negrita</b></h2>
+                        <h3 id="TextoCursiva"><i>Este es un texto en cursiva</i></h3>
+                        <h4 id="TextoSubrayado"><mark>Este es un texto subrayado</mark></h4>
+                        <h5><b><i>Este es un texto en negrita y cursiva</i></b></h5>
+                        <h6><b><mark>Este es un texto en negrita y subrayado</mark></b></h6>
+                    </div>
+                </li>
+            </section>
+            <!-- Encabezados y Propiedades del texto -->
+            
+            <!-- Divisiones y Agrupaciones del contenido -->
+            <section id="DivisionesAgrupaciones">
+                <li>
+                    <div class="encabezados">
+                        <h1>Divisiones y Agrupaciones del contenido</h1>
+                    </div>
+
+                    <div>
+                        <h3>Sección 1</h3>
+                        <p>Contenido de la primera sección agrupada en un div</p>
+                    </div>
+                    
+                    <div>
+                        <h3>Sección 2</h3>
+                        <p>Contenido de la segunda sección agrupada en un div</p>
+                    </div>
+                </li>
+            </section>
+            <!-- Divisiones y Agrupaciones del contenido -->
+
+            <!-- Enlaces y Listas -->
+            <section id="EnlacesListas">
+                <li>
+                    <div class="encabezados">
+                        <h1>Enlaces y listas</h1>
+                    </div>
+
+                    <div>
+                        <p>Visita nuestro <a target="_blank" href="https://www.google.com/search?q=desarrollo+de+software&sca_esv=2a600e09f15e7835&sxsrf=ADLYWII9MwyfZ3NWKlqT-3gxOuK3F0HRvg%3A1724022598584&ei=Rn_CZu-vI_iw5OUP496KWQ&ved=0ahUKEwjv6srU1P-HAxV4GLkGHWOvIgsQ4dUDCA8&uact=5&oq=desarrollo+de+software&gs_lp=Egxnd3Mtd2l6LXNlcnAiFmRlc2Fycm9sbG8gZGUgc29mdHdhcmUyDRAAGIAEGLEDGEMYigUyBRAAGIAEMgUQABiABDIFEAAYgAQyChAAGIAEGEMYigUyChAAGIAEGEMYigUyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESM8NUABYAHAAeAGQAQCYAYABoAHhAaoBAzEuMbgBA8gBAPgBAZgCAqAC7wHCAgYQABgHGB6YAwCSBwMwLjKgB9EM&sclient=gws-wiz-serp">sitio web</a> para más información</p>
+                    </div>
+
+                    <div>
+                        <details>
+                            <summary>Enlaces Internos</summary>
+                            <ul>
+                                <li><a href="#EstructuraBasica">Ir a Estructura Basica</a></li>
+                                <li><a href="#ElementosMultimedia">Ir a Multimedia</a></li>
+                                <li><a href="#Formulario">Ir a Formulario</a></li>
+                            </ul>
+                        </details>
+                    </div>
+
+                    <div>
+                        <details>
+                            <summary>Lista Desordenada</summary>
+                            <ul>
+                                <li>Primer item de una lista desordenada</li>
+                                <li>Segundo item de una lista desordenada</li>
+                            </ul>
+                        </details>
+                    </div>
+
+                    <div>
+                        <details>
+                            <summary>Lista ordenada</summary>
+                            <ol>
+                                <li>Primer item de una lista ordenada</li>
+                                <li>Segundo item de una lista ordenada</li>
+                            </ol>
+                        </details>
+                    </div>
+                </li>
+            </section>
+            <!-- Enlaces y Listas -->
+
+            <!-- Elementos multimedia -->
+            <section id="ElementosMultimedia">
+                <li>
+                    <div class="encabezados">
+                        <h1>Elementos Multimedia</h1>
+                    </div>
+
+                    <div>
+                        <img src="https://cdna.artstation.com/p/assets/images/images/046/235/272/smaller_square/pixel-arts-de-un-nino-random-ranita-uwu.jpg?1644605499" title="Ranita contenta" alt="Deberia Verse una ranita contenta">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/FfZngVIyk0A?si=j-3-kceazARL2aOm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <audio controls src="https://download.blender.org/peach/trailer/trailer_1080p.ogg"></audio>
+                    </div>
+                </li>
+                </section>
+                <!-- Elementos multimedia -->
+
+                <!-- Tablas -->
+                    <section>
+                        <li>
+                            <div class="encabezados">
+                                <h1>Tablas</h1>
+                            </div>
+                            
+                            <div>
+
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Columna 1</th>
+                                            <th>Columna 2</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>Fila 1, Columna 1</td>
+                                            <td>Fila 1, Columna 2</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Fila 2, Columna 1</td>
+                                            <td>Fila 2, Columna 2</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </li>
+                    </section>
+                <!-- Tablas -->
+
+                <!-- Formularios -->
+                <section id="Formulario">
+                    <li>    
+                        <div class="encabezados">
+                            <h1>Formularios</h1>
+                        </div>
+
+                        <div>
+                            <div id="Nombre">
+                                <label for="inputNombre">Nombre</label>
+                                <input type="text" placeholder="Ingrese su Nombre" id="inputNombre" type="text">
+                            </div>
+
+                            <div id="Email">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" placeholder="Ingrese su Email" id="inputEmail" type="text">
+                            </div>
+
+                            <div id="Mensaje">
+                                <label for="inputMensaje">Mensaje</label>
+                                <textarea placeholder="Escriba un mesaje" id="inputMensaje"></textarea>
+                            </div>
+
+                            <button type="submit">Enviar</button>
+                        </div>
+                    </li>
+                </section>
+                <!-- Formularios -->
+                
+        </ol>
+
+    </main>
+
+    <footer>
+        <p>MC Proyectos</p>
+    </footer>
+</body>
+
+</html>
+
