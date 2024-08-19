@@ -1,1 +1,3 @@
-Para la ejecución 
+Para la ejecución del archivo index.html se debe descargar el archivo y, luego para abrirlo en el navegador, se puede:
+1- Abrir el archivo index.html en visual studio code. Luego descargar la extension "Live Server" y una vez instalada, apretar el boton que se encuentra en la parte inferior izquierda que dice "Go Live"
+2- Abrir en el sistema de archivos la carpeta donde se colocó el archivo index.html, hacerle doble click y luego seleccionar que se abra con algun navegador, por ejemplo: google chrome.
