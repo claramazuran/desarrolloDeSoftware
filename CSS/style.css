@@ -1,0 +1,244 @@
+body{
+    margin: 0%; /*sirve para sacar el borde blanco que se me hace arriba del encabezado */
+}
+
+footer {
+    background-color: rgb(247, 200, 114);
+    margin-bottom: 0px;
+    height: 30px;
+    padding: 30px;
+    text-align: center;
+    color: aliceblue;
+}
+
+.estructuraPrincipal{
+    margin: 40px 40px 0px 40px
+}
+
+.encabezado p {
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el relleno predeterminado */
+} 
+
+.encabezado {
+    background-color: rgb(216, 156, 66);
+    width: 100vw;
+    height: 10vh;
+    padding-top: 40px;
+    
+}
+#titulo {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    font-style: italic;
+    color: white;  
+}
+
+#persisteYTriunfaras {
+    text-align: end;
+    color: white;
+    text-decoration: 2px underline white;
+}
+
+
+.subtitulo {
+    border-bottom: 3px solid rgb(216, 156, 66);
+    font-size: large;
+}
+
+#info1 {
+    text-decoration: 2px underline;
+    letter-spacing: 0.4px;
+    font-size: large;
+}
+
+#fraseJoe {
+    background-color: rgb(219, 214, 214);
+    padding: 10px;
+    margin-left: 0px;
+    margin-right:50vw;
+    border-left: 3px solid rgb(74, 73, 73);
+    color: rgb(98, 93, 93);
+
+}
+#propCaja, #posRelativaYAbsoluta, #principioAnimaciones {
+    margin: 50px 0px 0px 0px;
+}
+
+#grid{
+    margin: 100px 0px 0px 0px;
+}
+.contenedorCaja{
+    margin-top: 20px;
+}
+
+.cajaPadre {
+    box-shadow: rgb(77, 76, 76) 10px 2px 10px 2px; /*derecha, abajajo, difuminacion, que tan ancho*/
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.caja1 {
+    background-color: rgb(200, 212, 212);
+    margin-bottom: 20px;
+    border: 2px solid black;
+    
+}
+
+.caja2{
+    background-color: rgb(247, 200, 114);
+    border: 3px solid black;
+}
+
+.cajaRelativa {
+    background-color: rgb(198, 238, 238);
+    position: relative;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    
+}
+
+.cajaAbsoluta {
+    background-color: rgb(44, 145, 103);
+    color: white;
+    position: absolute;
+    left: 36vw;
+    padding: 5px 50px 5px 50px;
+    border-radius: 10px;
+}
+
+.grid-container {
+    display: grid;
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /*lo que me hace es que se repitan segun el tamaño del contenedor, y el tamañousa la funcio minmax con un minimo de 150px y max de 1fr*/
+    box-sizing: border-box;
+    justify-items: center;
+}
+
+.grid-item{
+    background-color:  rgb(247, 200, 114);
+    width: 15vw;
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+.mover{
+    border-left: 20px solid tomato;
+    border-right: 20px solid tomato;
+    padding-right: 100px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.mover img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    animation: mover1 5s infinite;
+    
+}
+
+.animacion{
+    width: 10vw;
+    height: 24vh;
+    background-size: cover;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/CABJ70.png/138px-CABJ70.png);
+    transition: 3s;
+    margin-top: 20px;
+}
+
+.animacion:hover { /*sirve para que cuando pase el cursor por arriba cambie las propiedades que hay aca adentro*/
+    cursor: pointer;
+    width: 12vw;
+    background-image: url(https://scontent.fmdz6-1.fna.fbcdn.net/v/t39.30808-6/301130595_453297030144417_6003882583820964572_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=KIsD5zDwyp8Q7kNvgFIZxqJ&_nc_ht=scontent.fmdz6-1.fna&oh=00_AYDWE5AYqpXS0Mvu1oR_uoTvm3K9q4vZyZXK4_HYU-TgNA&oe=66D7BFD6);
+}
+
+@keyframes mover1 {
+    0% {
+        transform: translateX(0);
+    } 
+
+    50% {
+        transform: translateX(70vw);
+    }
+}
+
+/*Media queries*/
+@media screen and (max-width: 768px) { /*max-width significa cuando el ancho de la pantalla es menor o igual a 768x hace lo de adentro de @media*/
+    
+    footer {
+        background-color: blueviolet;
+    }
+
+    body {
+        background-color: rgb(200, 162, 236);
+    }
+
+    .encabezado {
+        background-color: blueviolet;
+    }
+
+    .subtitulo {
+        border-bottom: 3px solid rgb(144, 0, 240);
+        font-size: medium;
+    }
+
+    
+    #propTexto, #posRelativaYAbsoluta, #propCaja, #grid, #principioAnimaciones { /*la diferencia entre poner con coma y sin coma es que, con coma hablamos de los contenedores por separados, sin coma estamos buscando un contenedor que tenga las todo lo que le colocamos*/
+        margin-top: 50px;
+        padding: 10px 30px 40px 30px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+        font-size: small;
+        margin-bottom: 50px;
+    }
+
+    #fraseJoe{
+        margin-right:0vw;
+        margin-top: 50px;
+    }
+
+    #info1{
+        font-size: small;
+        text-align: justify;
+        margin-top: 20px;
+    }
+    
+    .cajaAbsoluta{
+        left: 5vw;
+        padding: 5px 10px 5px 10px;
+    }
+    
+    .mover img {
+        animation: mover1 5s infinite;
+        
+    }
+
+    @keyframes mover1 {
+        0% {
+            transform: translateX(0);
+        } 
+    
+        50% {
+            transform: translateX(50vw);
+        }
+        
+    }
+
+    .animacion {
+        width: 20vw;
+        height: 24vh;  
+    }
+
+    .animacion:hover { /*sirve para que cuando pase el cursor por arriba cambie las propiedades que hay aca adentro*/
+        width: 22vw;
+    }
+}
+/*Media queries*/
+
