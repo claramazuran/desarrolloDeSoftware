@@ -4,6 +4,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 //jpa
 
 //jpa
@@ -22,6 +24,7 @@ import java.io.Serializable;
 
 //para poder hacer persistente a una entidad debemos hacerla implementar la interface de Serializable, esto para convertir al objeto en una secuencia de bytes para poder almacenarlo en nuestra bd
 public class Articulo implements Serializable {
+    //ATRIBUTOS
     @Id//jpa, nos indica que es la clave primaria de esta tabla
     @GeneratedValue(strategy = GenerationType.IDENTITY)//me genera que el id sea autoincremental
     private Long idArticulo;
@@ -29,6 +32,11 @@ public class Articulo implements Serializable {
     //existe la etiqueta @Column(name = "Cantidad...") la cual me permite establecerle un nombre que yo quiera a las columnas de la tabla
     private int cantidad;
     private String denominacion;
-    private int precio;
+    private double precio;
 
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})//usamos persist y merge porque no es una composicion entonces is se borra un articulo no se va a borrar ua categoría y ademas para que se actualicen caundo alguna se actualice
+    @Builder.Default
+    @JoinTable(name = "ArticuloCategoria", joinColumns = @JoinColumn(name = "idArticulo"), inverseJoinColumns = @JoinColumn(name = "idCategoria"))
+    private List<Categoria> categoria = new ArrayList<Categoria>();
+    //ATRIBUTOS
 }

@@ -22,6 +22,7 @@ import java.io.Serializable;
 //lombok
 //para poder hacer persistente a una entidad debemos hacerla implementar la interface de Serializable, esto para convertir al objeto en una secuencia de bytes para poder almacenarlo en nuestra bd
 public class Cliente implements Serializable {
+    //ATRIBUTOS
     @Id//jpa, nos indica que es la clave primaria de esta tabla
     @GeneratedValue(strategy = GenerationType.IDENTITY)//me genera que el id sea autoincremental
     private Long idCliente;
@@ -30,4 +31,9 @@ public class Cliente implements Serializable {
     private String apellido;
     private int dni;
     private String nombre;
+
+    @OneToOne(cascade = CascadeType.ALL) //jpa, me sirve para que cuando se actualice algo de cliente se va a actualizar en domicilio.
+    @JoinColumn(name = "fkDomicilio")//me crea una columna mas en la tabla cliente donde se coloca la pk del objeto domicilio
+    private Domicilio domicilio;//objeto de tipo domicilio
+    //ATRIBUTOS
 }
