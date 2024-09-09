@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="UnidadDePersistencia1" transaction-type="RESOURCE_LOCAL"> <!--el name es el nombre de mi unidad de persistencia-->
+        <class>org.example.Entidades.Articulo</class>
+        <class>org.example.Entidades.Categoria</class>
+        <class>org.example.Entidades.Cliente</class>
+        <class>org.example.Entidades.DetalleFactura</class>
+        <class>org.example.Entidades.Domicilio</class>
+        <class>org.example.Entidades.Factura</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.envers.audit_table_suffix" value="_AUD"/>
+            <property name="hibernate.envers.revision_field_name" value="revision"/>
+        </properties>
+
+        <!--el error que me sale es porque adentro de propierties no pueden haber comentarios-->
+        <!--<properties>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>//es el driver de h2
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/> Me sirve para especificar la ruda en donde va a estra la base de datos guardada, por defecto se va a guardar en el espacio del usuario que estoy usando y con el nombre de test. Si no existe se crea-->
+        <!--<property name="javax.persistence.jdbc.user" value="sa"/> Es el usuario por defecto de h2 y no hace falta ponerle contraseña-->
+        <!--<property name="javax.persistence.jdbc.password" value=""/>
+        <property name="hibernate.show_sql" value="true"/> me muestra las sentencias de SQL ejecutadas-->
+        <!--<property name="hibernate.show_sql" value="true"/>
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>-->
+        <!--<property name="hibernate.hbm2ddl.auto" value="create"/> crea las tablas cada vez que iniciamos la base de datos h2, solapa la info-->
+        <!--</properties>-->
+    </persistence-unit>
+</persistence>
