@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Vite App</title>
+  </head>
+  <body>
+    <!--Coneccion con el archivo js-->
+    <script type="module" src="/main.js"></script>
+    <!--Coneccion con el archivo js-->
+
+    <!--Ejercicio 3 seccion 1-->
+    <!--<section>  
+      <script>
+        let nombreUsuario = prompt("Coloque su nombre de usuario");
+        console.log(`Bienvenido de nuevo ${nombreUsuario}`);
+      </script>
+    </section>-->
+    <!--Ejercicio 3 seccion 1-->
+    
+    <!--Ejercicio 3 seccion 2-->
+    <!--<section>  
+      <script>
+        let numeroIngresado = prompt("Ingrese un numero y le digo si es par o impar");
+        if(Number(numeroIngresado)%2 == 0) {
+          console.log(`El numero ${numeroIngresado}, es par`)
+        } else {
+          console.log(`El numero ${numeroIngresado}, es impar`)
+        }    
+      </script>
+    </section>
+    -->
+    <!--Ejercicio 3 seccion 2-->
+
+    <!--Ejercicio 2 seccion 3-->
+    <!--<section>
+      <script>
+        let nro;
+        do {
+          nro = prompt("Ingrese un nro mayor a 100")
+          if (Number(nro)<= 100) {
+            nro = prompt("Ingrese un nro mayor a 100")
+          } else {
+            console.log(`Ingresaste un nro mayor a 100: ${nro}`)
+          }
+        } while (nro <= 100) 
+      </script>
+    </section>
+    -->
+    <!--Ejercicio 2 seccion 3-->
+    
+    <!--Ejercicio 1 seccion 5-->
+    <!--<section>
+      <script>
+      //ejercicio 1
+      let persona = {
+        nombre: "Clara",
+        apellido: "Mazuran",
+        edad: 20,
+        ciudad: "Carrodilla",
+        cambiarCiudad: function () {
+          persona.ciudad = prompt("Ingrese una ciudad")
+        }
+      }
+      persona.cambiarCiudad();
+      console.log(`Persona: ${persona.nombre} ${persona.apellido}, Edad: ${persona.edad}, Ciudad: ${persona.ciudad}`)
+  </script>
+  </section>
+  -->
+    <!--Ejercicio 1 seccion 5-->
+
+    <!--DOM-->
+      <section>
+        <div id="parrafos">
+          <p id="primerParrafo">Este es el primer parrafo</p>
+          <p id="segundoParrafo">Este es el segundo parrafo</p>
+          <p id="tercerParrafo">Este es el tercer parrafo</p>
+        </div>
+        <button type="button" id="botonCambiarColor">Cambiar color a azul</button>
+      </section>
+      
+      <section>
+        <h2>Formulario con alerta</h2>
+        <p>Ingresa un texto: </p>
+        <textarea name="" id="texto"></textarea>
+        <button  type = "button" id="botonAlerta"> Mostrar Alerta</button>
+      </section>
+    <!--DOM-->
+
+    <!--Eventos en DOM-->
+      <section>
+        <h1>Lista con elementos</h1>
+        <ul id="listaDesordenada">
+          <li class="listaDesordenada">Elemento 1</li>
+          <li class="listaDesordenada">Elemento 2</li>
+          <li class="listaDesordenada">Elemento 3</li>
+          <li class="listaDesordenada">Elemento 4</li>
+        </ul>
+        
+      </section>
+
+      <section>
+        <h1>Ejercicio 2: campo de texto y botones</h1>
+        <input type="text" id="campoTexto" placeholder="Ingresa algo">
+        <button id="botonDeshabilitar">Deshabilitar Campo</button>
+        <button id="botonHabilitar">Habilitar Campo</button>
+      </section>
+    <!--Eventos en DOM-->
+
+    <!--LocalStorage-->
+      <section>
+        <h1>Guardar Correo en localStorage</h1>
+        <form id="formulario">
+          <label for="correo">Correo Electrónico:</label>
+          <input type="email" id="correo" name="correo" required>
+          <button type="submit">Guardar</button>
+        </form>
+      <div id="correoGuardado"></div>
+      <button id="botonEliminar" style="display: none;">Eliminar</button>
+
+      </section>
+    <!--LocalStorage-->
+  </body>
+</html>
