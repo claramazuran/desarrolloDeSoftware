@@ -1,0 +1,6 @@
+Para ejecutar el codigo con el framework "Vite", se debe abrir el proyecto en algun editor de codigo, por ejemplo: visual studio code, abrir la terminal del editor y colocar los siguientes comandos:
+  1- npm install (en el caso de no tener las dependencias de npm ya instaladas)
+  2- npm run dev
+Luego de eso se debe hacer CTL +click sobre la url que aparece.
+
+En el caso de usar otro framework o medio para ejecutar el proyecto, se debe abrir el editor de texto que posea y presionar la opcion de live server.
