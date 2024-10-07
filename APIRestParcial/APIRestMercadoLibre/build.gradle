@@ -27,20 +27,26 @@ dependencies {
 
     //JPA
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
     // Spring web
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
     // Lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
     // H2
     runtimeOnly 'com.h2database:h2'
 
     // Openapi swagger
     implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.1.0'
+
     // Envers
     implementation 'org.hibernate.orm:hibernate-envers:6.4.4.Final'
+
     // Spring Boot Starter Validation
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '3.2.5'
+
     // mapstruct dtos y mapstruct integrado con lombok
     implementation 'org.mapstruct:mapstruct:1.5.5.Final'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
@@ -49,6 +55,7 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
     // Hibernate Core compatible con Jakarta (reemplaza a la versión 5.6.10.Final)
     implementation 'org.hibernate.orm:hibernate-core:6.4.4.Final'
 

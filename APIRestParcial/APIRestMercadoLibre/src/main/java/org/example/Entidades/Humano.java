@@ -3,7 +3,6 @@ package org.example.Entidades;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,7 +10,6 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
 @Getter
 @Setter
 
