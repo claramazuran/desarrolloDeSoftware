@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "1ee02123-8f81-474a-8ca5-12bea2ee9e42",
+		"name": "Demo App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12379877"
+	},
+	"item": [
+		{
+			"name": "Crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Ramses\",\r\n    \"apellido\":\"Girala\",\r\n    \"edad\": 10,\r\n    \"fechaNacimiento\": \"1999-11-07\",\r\n    \"domicilio\": {\r\n        \"calle\":\"Aleli\",\r\n        \"numero\":2700,\r\n        \"provincia\":\"Mendoza\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Short Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/personas/short/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"short",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener All Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/personas/all/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"all",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
