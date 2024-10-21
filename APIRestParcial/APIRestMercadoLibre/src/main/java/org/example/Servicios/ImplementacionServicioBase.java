@@ -25,6 +25,7 @@ import java.util.Optional;
 public abstract class ImplementacionServicioBase <E extends EntidadBase, ID extends Serializable> implements ServicioBase <E, ID>{
 
     //instanciamos nuestro servicio base
+    @Autowired
     protected RepositorioBase<E,ID> repoBase;//usamos protected asi las clases que hereden de ella pueden acceder a este atributo como si estuviera el permiso en publico
 
     public ImplementacionServicioBase(RepositorioBase<E, ID> repoBase) {

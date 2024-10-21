@@ -202,26 +202,26 @@ public class Humano extends EntidadBase{
         //llamo a las funciones que me analizan la cantidad de filas, columnas y diagonales mutantes que tengo
         cantidadDeSecuencias += obtenerFilas(arrayDna);
 
-        if (cantidadDeSecuencias > 1) {
-            return true;
-        } else {
+        if (cantidadDeSecuencias <= 1) {
             cantidadDeSecuencias += obtenerColumnas(arrayDna);
-
-            if (cantidadDeSecuencias > 1) {
-                return true;
-            } else {
-                List<List<Character>> arrayDiagonalesDeIzquierdaADerecha = obtenerMatrizDiagonalIzquierdaADerecha(arrayDna);
-                List<List<Character>> arrayDiagonalesDeDerechaAIzquierda = obtenerMatrizDiagonalDerechaAIzquierda(arrayDna);
-                cantidadDeSecuencias += obtenerDiagonales(arrayDiagonalesDeIzquierdaADerecha);
-                if (cantidadDeSecuencias > 1) {
-                    return true;
-                } else {
-                    cantidadDeSecuencias += obtenerDiagonales(arrayDiagonalesDeDerechaAIzquierda);
-                    return (cantidadDeSecuencias > 1) ?  true : false;
-                }
-            }
         }
 
+        if (cantidadDeSecuencias <= 1) {
+            List<List<Character>> arrayDiagonalesDeIzquierdaADerecha = obtenerMatrizDiagonalIzquierdaADerecha(arrayDna);
+            cantidadDeSecuencias += obtenerDiagonales(arrayDiagonalesDeIzquierdaADerecha);
+        }
+
+        if (cantidadDeSecuencias <= 1) {
+            List<List<Character>> arrayDiagonalesDeDerechaAIzquierda = obtenerMatrizDiagonalDerechaAIzquierda(arrayDna);
+            cantidadDeSecuencias += obtenerDiagonales(arrayDiagonalesDeDerechaAIzquierda);
+        }
+
+        //asigno una variable local al metodo que va a ser true si tengo mas de una secuencia de mutacion
+        boolean esMutante = (cantidadDeSecuencias > 1);
+        //seteo el atributo esMutante
+        setEsMutante(esMutante);
+
+        return esMutante;
     }
 /*METODOS*/
 }

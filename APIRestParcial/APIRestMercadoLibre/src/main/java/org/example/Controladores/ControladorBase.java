@@ -14,6 +14,7 @@ public interface ControladorBase <E extends EntidadBase, ID extends Serializable
     public ResponseEntity<?>  save(@RequestBody E entity);
     public ResponseEntity<?>  update(@PathVariable ID id, @RequestBody E entity);
     public ResponseEntity<?>  delete(@PathVariable ID id);
-    public ResponseEntity<?>  getAllMutants();
-    public ResponseEntity<?>  getAllNoMutants();
+    public ResponseEntity<?>  realizarEstadistica();
+//    public ResponseEntity<?>  getAllMutants();
+//    public ResponseEntity<?>  getAllNoMutants();
 }

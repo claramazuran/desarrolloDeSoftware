@@ -39,7 +39,8 @@ public interface PersonaRepository extends BaseRepository<Persona,Long> {
         //SQL
             @Query(
                     value = "SELECT * FROM PERSONA WHERE PERSONA.NOMBRE_PERSONA LIKE %:Filtro% OR PERSONA.APELLIDO_PERSONA LIKE %:Filtro%",
-                    countQuery = "SELECT count(*) FROM PERSONA",//tenemos que agregar este atributo porque sql no tiene automatica la paginacion
+                    countQuery = "SELECT count(*) FROM PERSONA",
+                    //tenemos que agregar este atributo porque sql no tiene automatica la paginacion
                     nativeQuery = true
             )
             List<Persona> searchNativo(@Param("Filtro") String filtro);

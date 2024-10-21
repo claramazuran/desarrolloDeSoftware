@@ -1,5 +1,6 @@
 body{
     margin: 0%; /*sirve para sacar el borde blanco que se me hace arriba del encabezado */
+    padding: 0%;
 }
 
 footer {

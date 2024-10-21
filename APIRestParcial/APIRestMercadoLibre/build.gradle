@@ -1,16 +1,14 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.3.3'
-    id 'io.spring.dependency-management' version '1.1.6'
+    id 'org.springframework.boot' version '3.2.3'
+    id 'io.spring.dependency-management' version '1.1.4'
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
+    sourceCompatibility = '17'
 }
 
 configurations {
@@ -24,53 +22,42 @@ repositories {
 }
 
 dependencies {
-
     //JPA
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
-    // Spring web
+    //SPRING WEB
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    // Lombok
+    //LOMBOK
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
-    // H2
+    //H2 DATABASE
     runtimeOnly 'com.h2database:h2'
 
-    // Openapi swagger
+
+
+    //MAPSTRUCT, es para mapear dto, ME PERMITE PASAR DE DTO A ENTIDAD Y VICEVERSA
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+
+    annotationProcessor 'org.projectlombok:lombok', 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+
+    //OPEN API, documenta api
     implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.1.0'
 
-    // Envers
-    implementation 'org.hibernate.orm:hibernate-envers:6.4.4.Final'
-
-    // Spring Boot Starter Validation
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '3.2.5'
-
-    // mapstruct dtos y mapstruct integrado con lombok
-    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
-    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
-    annotationProcessor "org.projectlombok:lombok-mapstruct-binding:0.2.0"// json
-    implementation 'org.json:json:20210307'
-
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-
-    // Hibernate Core compatible con Jakarta (reemplaza a la versión 5.6.10.Final)
-    implementation 'org.hibernate.orm:hibernate-core:6.4.4.Final'
-
-
-
 }
 
 tasks.named('test') {
     useJUnitPlatform()
 }
 
+
 tasks.jar {
     enabled = true
 }
 
+//compila el programa y crea una version ejecutable, envevemos nuestro sistema con un tomcat
 bootJar {
     enabled = true
 }

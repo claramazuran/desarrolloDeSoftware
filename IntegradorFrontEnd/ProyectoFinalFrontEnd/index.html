@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Niko Sandwiches</title>
+
+  <!-- Fuentes de google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Oriya:wght@400..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <!-- Fuentes de google -->
+
+  <!-- Iconos -->
+  <!--como son de la misma familia los iconos solo coloco la ruta una sola vez  -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- Iconos -->
+  
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <section class="contenedorHeaderPrincipal">
+        
+        <section class="contenedorHeader">
+          
+          <div class="buscarElemento">
+            <input type="text" placeholder="Ingrese un elemento" id="inputBuscarElemento">
+            <button id="botonBuscarElemento">Buscar
+              <span class="material-symbols-outlined">
+              search
+              </span>
+            </button>
+          </div>
+
+          <div class="agregarElemento">
+            <button id="botonAgregarElemento">Agregar Elemento
+              <span class="material-symbols-outlined">
+                shopping_cart
+                </span>
+            </button>
+          </div>
+
+        </section>
+
+      </section>
+    </header>
+    <!-- Header -->
+
+    <!-- Main -->
+      <main id="contenedorMain">
+
+        <aside id="listaAside">
+          <button type="menu" id="menuCategoria">
+            <span class="material-symbols-outlined">
+              reorder
+            </span>
+            Categorias
+            <span class="material-symbols-outlined">
+              keyboard_arrow_down
+              </span>
+          </button>
+          <ul id="listaFiltro"/>
+        </aside>
+
+        <section class="store" id="containerStore">
+
+        </section>
+      
+      <!-- Elementos del popUp de agregar elemento -->
+        <section id="modeloPoUp" class="contenedorPrincipalPopUp">
+          <section class="contenedorPopUp">
+            <div class="tituloagregarProducto">
+              <h3>Agregar o Modificar un producto</h3>
+            </div>
+            
+            <div class="contenedorInputsPopUp">
+              <input type="text" id="inputNombreProducto" placeholder="Ingrese un nombre">
+              <input type="text" id="inputImagenProducto" placeholder="Ingrese una imagen">
+              <input value="0" type="number" id="inputPrecioProducto" placeholder="Ingrese el precio">
+              <select id="elegirCategoria">
+                <option>Seleccione una Categoria</option>
+                <option>Sandwiches</option>
+                <option>Papas</option>
+                <option>Gaseosas</option>
+                <span class="material-symbols-outlined">
+                  keyboard_arrow_down
+                  </span>
+              </select>
+            </div>
+
+            <div class="contenedorBotonesPopUp" id="contenedorBotonesPU">
+              <button type="button" class="popUpbotonCancelar" id="botonCancelar">Cancelar</button>
+              <button type="button" class="popUpbotonAceptar" id="botonAceptar">Aceptar</button>
+              <button type="button" class="popUpbotonEliminar" id="botonEliminar">Eliminar</button>
+            </div>
+
+          </section>
+        </section>
+      <!-- Elementos del popUp de agregar elemento -->
+      </main>
+    <!-- Main -->
+    <footer>
+      <div> MC Company </div>
+    </footer>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
+
+<!-- papas fritas con cheddar https://comedera.com/wp-content/uploads/sites/9/2022/11/papas-fritas-con-queso-cheddar-PG_PFCQCY30320002.jpg?resize=1316,740&quality=80  -->
+<!-- sandwichpan frances https://comedera.com/wp-content/uploads/sites/9/2023/03/sandwich-submarino-shutterstock_2160373737.jpg?resize=1316,740&quality=80-->
+<!-- sandwich miga surtidos https://amaranthusbakery.com/tienda/wp-content/uploads/2020/07/Archivo-182.jpg -->
+<!-- sprite https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/202308/30/00118619700232____5__600x600.jpg -->
