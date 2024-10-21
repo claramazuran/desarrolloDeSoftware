@@ -1,0 +1,7 @@
+Para ejecutar la pagina web se debe:
+ - Abrir un editor de codigo (como visual studio code).
+ - Abrir la terminal del editor
+ - Colocar los siguientes comandos en la terminal, tieniendo previamente instalado Vite, Node y NPM:
+  * npm install
+  *npm run dev
+ - Hacer ctrl + click sobre la url que se muestra en la terminal y ahi va a estra la pagina web lista para ser usada!
