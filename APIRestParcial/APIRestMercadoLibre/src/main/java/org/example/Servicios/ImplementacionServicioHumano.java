@@ -13,10 +13,18 @@ import java.util.List;
 
 @Service
 public class ImplementacionServicioHumano extends ImplementacionServicioBase <Humano, Long> implements ServicioHumano{
-    @Autowired
+
+
     private RepositorioHumano repositorioHumano;
-    @Autowired
+
     private RepositorioEstadistica repositorioEstadistica;
+
+    @Autowired
+    public ImplementacionServicioHumano(RepositorioHumano repositorioHumano, RepositorioEstadistica repositorioEstadistica) {
+        super(repositorioHumano); // Llama al constructor de la clase base con repositorioHumano
+        this.repositorioHumano = repositorioHumano;
+        this.repositorioEstadistica = repositorioEstadistica;
+    }
 
     @Override
     public Humano save(Humano entity) {
@@ -34,9 +42,10 @@ public class ImplementacionServicioHumano extends ImplementacionServicioBase <Hu
         long cantidadHumanos = repositorioEstadistica.contarHumanos();
         long cantidadMutantes = repositorioEstadistica.contarMutantes();
 
-        double ratio = (cantidadHumanos + cantidadMutantes) > 0
-                ? (double) cantidadMutantes / (cantidadHumanos + cantidadMutantes)
+        double ratio = (cantidadHumanos) > 0
+                ? (double) cantidadMutantes / cantidadHumanos
                 : 0;
+
         Estadistica estadistica = Estadistica.builder()
                 .fechaEstadistica(new Date())//asigna la fecha actual
                 .cantidadHumanos(cantidadHumanos)
@@ -47,4 +56,5 @@ public class ImplementacionServicioHumano extends ImplementacionServicioBase <Hu
 
         return estadistica;
     }
+
 }

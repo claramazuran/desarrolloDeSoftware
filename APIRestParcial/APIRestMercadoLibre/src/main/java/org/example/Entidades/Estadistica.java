@@ -5,6 +5,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.Date;
 
@@ -12,7 +13,8 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
-@Builder
+@SuperBuilder
+
 
 @Entity
 @Table(name = "Estadistica")

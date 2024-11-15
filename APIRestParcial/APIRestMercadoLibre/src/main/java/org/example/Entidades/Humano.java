@@ -3,6 +3,7 @@ package org.example.Entidades;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,6 +13,8 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
+@SuperBuilder
+
 
 @Entity
 @Table(name = "Humano")
@@ -218,6 +221,7 @@ public class Humano extends EntidadBase{
 
         //asigno una variable local al metodo que va a ser true si tengo mas de una secuencia de mutacion
         boolean esMutante = (cantidadDeSecuencias > 1);
+
         //seteo el atributo esMutante
         setEsMutante(esMutante);
 

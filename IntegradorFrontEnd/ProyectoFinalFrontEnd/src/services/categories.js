@@ -7,7 +7,6 @@ import { inputBuscar } from "./buscarElemento";
 
 //elemntos DOM
 const filtroLista = document.getElementById("listaFiltro");
-
 //elemntos DOM
 
 //filtros de categorias

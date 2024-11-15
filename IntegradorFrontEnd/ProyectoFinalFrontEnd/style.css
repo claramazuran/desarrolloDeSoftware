@@ -166,6 +166,7 @@ width: 100%;
 .containerProductStore{
   width: 100%;
   display: grid;
+  overflow-y: hidden;
   grid-template-columns: repeat(3, 0.6fr);
   gap: 2vh;
 }

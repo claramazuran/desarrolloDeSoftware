@@ -1,7 +1,6 @@
 package org.example.Controladores;
 
 import org.example.Entidades.EntidadBase;
-import org.example.Entidades.Humano;
 import org.example.Servicios.ImplementacionServicioBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,12 +22,6 @@ public abstract class ImplementacionControladorBase <E extends EntidadBase, S ex
         }
     }
 
-    public ResponseEntity<?> getAllMutants() {
-        return null;
-    }
-    public ResponseEntity<?> getAllNoMutants() {
-        return null;
-    }
     @GetMapping("/{id}")
     public ResponseEntity<?> getOne(@PathVariable Long id) {
         try {
@@ -37,16 +30,6 @@ public abstract class ImplementacionControladorBase <E extends EntidadBase, S ex
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"" + e.getMessage() + "\"}");
         }
     }
-
-    /*@GetMapping("")
-    public ResponseEntity<?> getEstadisticas (){
-        try {
-            return ResponseEntity.status(HttpStatus.OK).body("{\"error\":\"" + e.getMessage() + "\"}")
-        }catch (Exception e) {
-            return
-        }
-
-    }*/
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {

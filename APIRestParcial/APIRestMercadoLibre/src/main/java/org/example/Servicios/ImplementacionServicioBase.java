@@ -25,9 +25,9 @@ import java.util.Optional;
 public abstract class ImplementacionServicioBase <E extends EntidadBase, ID extends Serializable> implements ServicioBase <E, ID>{
 
     //instanciamos nuestro servicio base
-    @Autowired
-    protected RepositorioBase<E,ID> repoBase;//usamos protected asi las clases que hereden de ella pueden acceder a este atributo como si estuviera el permiso en publico
+    protected RepositorioBase<E, ID> repoBase;//usamos protected asi las clases que hereden de ella pueden acceder a este atributo como si estuviera el permiso en publico
 
+    @Autowired
     public ImplementacionServicioBase(RepositorioBase<E, ID> repoBase) {
         this.repoBase = repoBase;
     }
@@ -56,19 +56,6 @@ public abstract class ImplementacionServicioBase <E extends EntidadBase, ID exte
             return entityOptional.get();
         }
         catch(Exception e) {
-            throw new Exception(e.getMessage());
-        }
-    }
-
-    @Override
-    @Transactional
-    public E save(E entity) throws Exception {
-
-        try{
-            entity = repoBase.save(entity);
-            return entity;
-        }
-        catch(Exception e){
             throw new Exception(e.getMessage());
         }
     }

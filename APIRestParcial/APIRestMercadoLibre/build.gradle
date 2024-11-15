@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.2.3'
     id 'io.spring.dependency-management' version '1.1.4'
+    id 'jacoco'
 }
 
 group = 'com.example'
@@ -35,29 +36,47 @@ dependencies {
     //H2 DATABASE
     runtimeOnly 'com.h2database:h2'
 
-
-
     //MAPSTRUCT, es para mapear dto, ME PERMITE PASAR DE DTO A ENTIDAD Y VICEVERSA
     implementation 'org.mapstruct:mapstruct:1.5.5.Final'
-
-    annotationProcessor 'org.projectlombok:lombok', 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
 
     //OPEN API, documenta api
     implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.1.0'
 
+    //JUnit 5
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
+
+    //Mockito
+    testImplementation 'org.mockito:mockito-core:3.7.7'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
 }
 
-tasks.named('test') {
+jacoco {
+    toolVersion = "0.8.8" // Usa la última versión compatible, verifica si hay actualizaciones
+}
+
+test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport // Genera el informe después de las pruebas
 }
-
 
 tasks.jar {
     enabled = true
 }
 
-//compila el programa y crea una version ejecutable, envevemos nuestro sistema con un tomcat
+//compila el programa y crea una version ejecutable, envesemos nuestro sistema con un tomcat
 bootJar {
     enabled = true
+}
+
+jacocoTestReport {
+    reports {
+        xml.required.set(true) // Generar informe XML
+        csv.required.set(false) // No generar informe CSV
+        html.required.set(true) // Generar informe HTML
+        html.outputLocation.set(file("${buildDir}/jacocoHtml")) // Ubicación de HTML
+    }
 }

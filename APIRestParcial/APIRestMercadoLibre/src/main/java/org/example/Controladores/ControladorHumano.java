@@ -15,6 +15,7 @@ public class ControladorHumano extends ImplementacionControladorBase <Humano, Im
     @PostMapping("")
     public ResponseEntity<?> save(@RequestBody Humano entity) {
         boolean esMutante = servicio.mutanteOno(entity);
+        System.out.println("Es mutante: " + esMutante);
         if (esMutante) {
             return ResponseEntity.status(HttpStatus.OK).body(servicio.save(entity));
         } else {
